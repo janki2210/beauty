@@ -23,11 +23,18 @@ header{
 }
 header .profilebar{
     text-align: center;
-    margin: 5px;
+    display: block;
+    /* margin: 5px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* text-align: center;
+    padding: 0;
+    display: block;
+    width: 100%; */
 }
 header .profilebar .i{
     width: 50%;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 header .profilebar h1{
     font-size: 30px;
@@ -43,8 +50,9 @@ header .profilebar .menu{
 }
 .menu nav ul{
     list-style-type: none;
-    font-size: 10px;
-    margin-left: 10px;
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 25px;
 }
 .menu nav ul li{
     width: 80%;
@@ -55,6 +63,9 @@ header .profilebar .menu{
     border-top: none;
     border-left: none;
     border-right: none;
+}
+header nav ul li a{
+    text-decoration: none;
 }
 header .contact{
     margin-top:25px;
@@ -69,39 +80,433 @@ header .contact .time{
 }
 header .contact .time .timedescription{
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 15px;
     text-align: left;
     padding-left: 10px;
 }
-header .footer{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    padding: 60px 0px 0px 0px;
-    text-align: center;
-}
-header .footer ul{
-    display: inline-block;
-    margin-bottom: 15px;
-    padding: 0;
-    position: relative;
-}
-header .footer ul::before{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.09);
-    top: 50%;
-    margin-top: -1px;
-    right: 100%;
-}
-/* profilebarcontent */
-.main{
+
+
+/*content*/
+.content{
     width: 80%;
     height: 100vh;
     float: right;
+}
+
+/* home page */
+.homepage{
+    width: 100%;
+    height: 100vh;
+    animation: salon;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.homepage img{
+    width:100%;
+    height:100vh;
+}
+
+/* aboutpage */
+.aboutpage{
+    /* width: 100%;
+    height: 100vh;
+    float: right; */
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+h3 {
+    color: rgb(199, 26, 113);
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    position: relative;
+    left: -100%;
+    transition: 1.5s;
+}
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 25px;
+    position: relative;
+    transition: 1.5s;
+    left: -100%;
+    overflow: hidden;
+}
+.aboutpage:hover h3{
+    left: 0;
+    transition: 1s;
+}
+.aboutpage:hover h4{
+    transition: 1s;
+    left: 0;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+}
+.info .customerimg{
+    width: 500px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    line-height: 30px;
+    padding-left: 25px;
+}
+.salonteam{
+    width: 100%;
+    display: none;
+}
+.salonteam .containerteam{
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.068);
+}
+.salonteam .teamrow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.salonteam .teambox{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.salonteam .teamsubbox{
+    width: 100%;
+    text-align: center;
+}
+.salonteam .teamsubbox img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.salonteam .teamsubbox h1 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+.salonteam .teamsubbox h2 {
+    font-size: 17px;
+    color: rgb(233, 12, 122);
+    font-style: normal;
+    margin-top: 10px;
+}
+.aboutpage p {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    line-height: 30px;
+    padding-left: 25px;
+}
+.salonteam .teamsubbox .social {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.salonteam .teamsubbox .socialbox {
+    height: 25px;
+    width: 25px;
+    padding-top: 15px;
+    background-color: white;
+    border: 1px solid rgb(230, 11, 120);
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+.salonteam .teamsubbox i {
+    font-size: 20px;
+    color: rgb(230, 11, 120);
+}
+.customerreview {
+    display: none;
+    width: 100%;
+    background-image: url(..//img/pexels-anna-shvets-5069494.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.customerreviewtext {
+    background-color: rgba(0, 0, 0, 0.171);
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+.customerreviewtext h1 {
+    color: rgb(199, 26, 113);
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    padding-top: 50px;
+    padding-left: 40px;
+    text-align: left;
+}
+.customerreviewtext p {
+    color: grey;
+    text-align: left;
+    padding-left: 40px;
+    font-size: 18px;
+}
+.customerbox {
+    height: 250px;
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10%;
+}
+.customerbox p {
+    color: gray;
+    text-align: justify;
+    padding: 20px 10px;
+}
+.customerperdetails {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.customerperdetails img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.customerperdetails h2 {
+    font-size: 17px;
+    font-style: normal;
+    padding: 0px 10px;
+}
+.customerperdetails p {
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.content:hover h3 {
+    left: 0%;
+}
+.content:hover h4 {
+    left: 0;
+}
+.cosmeticbrands {
+    display: none;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.cosmeticbrandlogo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.cosmeticbrandlogo img {
+    height: 50px;
+    width: 70px;
+    margin: 0px 35px;
+}
+.footer {
+    display: none;
+    margin-top: 0px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(243, 10, 99);
+    text-align: center;
+    color: white;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-family: unset;
+    font-style: italic;
+}
+.footer p {
+    font-style: italic;
+    padding-top: 5px;
+}
+
+/* about responsive */
+@media screen and (max-width: 768px) and (min-width: 427px){
+.aboutpage {
+    display: none;
+}
+}
+@media screen and (max-width: 768px) and (min-width: 427px){
+h3 {
+    margin-top: 15px;
+    font-size: 30px;
+}
+}
+@media screen and (max-width: 768px) and (min-width: 427px){
+h4 {
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 426px){
+.footer {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+.cosmeticbrands {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+.customerreview {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+h3 {
+    margin-top: 15px;
+    font-size: 30px;
+}
+}
+@media screen and (max-width: 426px){
+h4 {
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 426px){
+.info {
+    display: flex;
+    flex-direction: column;
+}
+}
+@media screen and (max-width: 426px){
+.customerimg {
+    height: 300px;
+    width: 250px;
+    margin: auto;
+}
+}
+@media screen and (max-width: 426px){
+.aboutpage p {
+    padding-left: 10px;
+    text-align: left;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+h3 {
+    margin-top: 15px;
+    font-size: 30px;
+}
+}
+@media screen and (max-width: 426px){
+h4 {
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .containerteam {
+    width: 90%;
+    margin: auto;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamrow {
+    width: 100%;
+    flex-direction: column;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teambox {
+    width: 100%;
+    box-sizing: border-box;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox {
+    width: 100%;
+    text-align: center;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox h1 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox h2 {
+    font-size: 17px;
+    color: rgb(233, 12, 122);
+    font-style: normal;
+    margin-top: 10px;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox p {
+    padding: 20px 0px;
+    text-align: center;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox .social{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox .socialbox {
+    height: 30px;
+    width: 30px;
+    padding-top: 10px;
+    background-color: white;
+    border: 1px solid rgb(230, 11, 120);
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+}
+@media screen and (max-width: 426px){
+.salonteam .teamsubbox i {
+    font-size: 17px;
+}
+}
+@media screen and (max-width: 426px){
+.customerreview {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+.cosmeticbrands {
+    display: block;
+}
+}
+@media screen and (max-width: 426px){
+h3 {
+    margin-top: 15px;
+    font-size: 30px;
+}
+}
+@media screen and (max-width: 426px){
+h4 {
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 426px){
+.footer {
+    display: block;
+}
 }
